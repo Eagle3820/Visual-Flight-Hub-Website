@@ -1,9 +1,32 @@
-<nav>
-    <ul>
-      <li><a href="{% url 'home' %}">Home</a></li>
-      <li><a href="{% url 'reset_session' %}">Reset Session</a></li>
-    </ul>
-  </nav>
-  {% block content %}
-  {% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Visual Flight Hub{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a class="navbar-brand" href="{% url 'home' %}">
+            <img src="{% static 'img/logo.png' %}" alt="Visual Flight Hub Logo">
+        </a>
+        <ul class="nav-links">
+            <li><a href="{% url 'reset_session' %}">Reset_Session</a></li>
+        </ul>
+    </nav>
+    
+    <!-- Main content of the page -->
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+    
+    <!-- JavaScript files 
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    {% block extra_js %}{% endblock %} -->
+</body>
+</html>
   

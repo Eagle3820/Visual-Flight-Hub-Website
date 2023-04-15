@@ -7,7 +7,7 @@ from django.shortcuts import render, redirect
 # checks if user has seen welcome
 def welcome(request):
     # User is not logged in, check if they have seen the welcome page before
-    if request.session.get('has_seen_welcome', False):
+    if request.session.get('has_seen_welcome', True):
         # User has seen the welcome page before, redirect to login page
         return redirect('home')
     else:

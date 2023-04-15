@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <title>{% block title %}Visual Flight Hub{% endblock %}</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     {% block extra_css %}{% endblock %}
 </head>
 <body>
     <!-- Navigation Bar -->
     <nav class="navbar">
         <a class="navbar-brand" href="{% url 'home' %}">
-            <img src="{% static 'img/logo.png' %}" alt="Visual Flight Hub Logo">
+            <img src="{% static 'img/logo.png' %}" alt="logo" class="logo">
         </a>
         <ul class="nav-links">
             <li><a href="{% url 'reset_session' %}">Reset_Session</a></li>
@@ -23,10 +23,6 @@
         {% block content %}{% endblock %}
     </div>
     
-    <!-- JavaScript files 
-    <script src="{% static 'js/jquery.min.js' %}"></script>
-    <script src="{% static 'js/main.js' %}"></script>
-    {% block extra_js %}{% endblock %} -->
 </body>
 </html>
   
